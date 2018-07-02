@@ -1,0 +1,35 @@
+#contact
+  .contact-form
+    max-width: 70%
+
+    input, textarea
+      display: block
+      width: 100%
+
+    input[type="submit"]
+      transition: all 0.1s linear
+      color: $rc-blue-light
+      background-color: rgba($rc-blue-dark, 0.3)
+
+      &:hover
+        background-color: rgba($rc-blue-dark, 0.8)
+        color: $rc-gray-light
+        
+  .linkedin svg
+    transition: all 0.1s linear
+    stroke: $rc-blue-light
+    fill: $rc-blue-light
+
+    &:hover
+      stroke: white
+      fill: white
+
+@media screen and (max-width: 550px)
+  #contact
+    .contact-form
+      max-width: 100%
+
+    .linkedin
+      width: 100%
+      text-align: center
+      margin: 0 auto 2rem

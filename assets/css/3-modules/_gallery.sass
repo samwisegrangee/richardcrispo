@@ -1,0 +1,142 @@
+.portfolio
+	.box
+		background-position: center
+		background-size: cover
+		position: relative
+		overflow: hidden
+		transition: all 0.3s linear
+
+		&:hover
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4)
+			transform: translateY(-3px) scale(1.01)
+
+
+		img
+			width: 100%
+
+		.overlay
+			position: absolute
+			background: rgba($rc-gray-dark, 0.7)
+			top: 0
+			bottom: 0
+			right: 0
+			left: 0
+			padding: 20px
+			opacity: 0.3
+			transition: all 0.3s linear
+
+			h3
+				position: absolute
+				bottom: 0
+				color: white
+
+			&:hover
+				opacity: 1
+
+	.grid
+		display: grid
+		grid-gap: 10px
+		grid-template-columns: [col1-start] 33%  [col2-start] 33%  [col3-start] 33% [col3-end]
+		grid-template-rows: [row1-start] 250px [row2-start] 250px [row2-end]
+		margin: 10px auto
+
+	.first-row
+
+		.a
+			grid-column: col1-start / col3-start
+			grid-row: row1-start
+
+		.b
+			grid-column: col3-start
+			grid-row: row1-start / row2-end
+
+		.c
+			grid-column: col1-start
+			grid-row: row2-start
+			background-position: top
+
+		.d
+			grid-column: col2-start
+			grid-row: row2-start
+
+	.second-row
+		.a
+			grid-column: col1-start / col2-start
+			grid-row: row1-start / row2-end
+			background-position: 70%
+
+		.b
+			grid-column: col2-start / col3-end
+			grid-row: row1-start
+			background-position: top
+			background-size: 150%
+
+		.c
+			grid-column: col2-start
+			grid-row: row2-start
+			background-position: top
+
+		.d
+			grid-column: col3-start
+			grid-row: row2-start
+			background-position: right
+			background-size: 210%
+
+
+@media screen and (max-width: 550px)
+	.grid
+		display: block !important
+
+		.a, .b, .c, .d
+			width: 100%
+			height: 250px
+			margin: 20px 0
+
+			h3
+				left: 50%
+				transform: translate(-50%)
+				text-align: center
+
+	.second-row
+		.b
+			background-size: 175%
+		.c
+			background-position: center
+
+	#work .container
+		padding: 0
+
+
+
+.light-box
+	display: none
+	position: fixed
+	z-index: 1
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	background: rgba(0,0,0, 0.8)
+	overflow-y: auto
+
+	.container
+		display: block
+		align-items: center
+		text-align: center
+		height: 100%
+		max-width: 600px
+		margin: 0 auto
+
+		.modal-content
+			margin-top: 125px
+			width: 100%
+			text-align: center
+			padding: 10px
+
+			img
+				width: 100%
+				border-radius: 5px
+				border: 1px solid white
+
+			p
+				color: white
